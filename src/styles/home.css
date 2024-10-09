@@ -132,4 +132,7 @@
   .sub-heading::first-letter {
     font-size: 30px;
   }
+  #about-us .right img:hover {
+    scale: 1;
+  }
 }/*# sourceMappingURL=home.css.map */
