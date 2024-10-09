@@ -11,7 +11,16 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: {
+          DEFAULT: "#CCA34C",
+          light: "#FDF8E9"
+        }
       },
+      fontFamily: {
+        "poppins": "poppins",
+        "roboto": "roboto",
+        "prata": "Prata"
+      }
     },
   },
   plugins: [],

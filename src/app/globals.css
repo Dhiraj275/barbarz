@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,23 +8,232 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #CCA34C;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: Roboto;
+  overflow-x: hidden;
+}
+
+
+
+.section-title {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title.title-left {
+  text-align: left;
+  display: block;
+}
+
+.heading {
+  position: relative;
+  font-size: 40px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #4A4845;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sub-heading {
+  color: var(--primary);
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+
+}
+
+.sub-heading::first-letter {
+  font-size: 38px;
+}
+
+.underline {
+  width: 292px;
+  display: flex;
+  align-items: center;
+}
+
+.underline.sm {
+  width: 165px;
+}
+
+
+
+.underline.sm img {
+  width: 38px;
+}
+
+.underline .line {
+  width: 50%;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+
+.navbar a {
+  font-family: Roboto;
+}
+
+.navbar a:hover {
+  transition: 0.4s;
+  color: #CCA34C;
+}
+
+.navbar .logo {
+  height: 120px;
+}
+
+.mobile {
+  display: none;
+  top: -100%;
+}
+
+.toggle-switch {
+  display: none;
+}
+
+footer {
+  background-image: url(/assets/images/footer-bg.png);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 60vw;
+}
+
+footer .links ul li {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+footer .links ul li::before {
+  content: "";
+  position: relative;
+  background-image: url(/assets/icons/scissors.png);
+  height: 20px;
+  width: 20px;
+  display: block;
+  background-size: contain;
+  rotate: 90deg;
+  margin-right: 28px;
+}
+
+footer ul li {
+  margin: 10px;
+  padding-left: 20px;
+}
+
+footer ul li a {
+  display: flex;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: poppins;
+  transform: 0.2s;
+}
+
+footer ul li a:hover {
+  color: var(--primary);
+}
+
+footer ul li img {
+  width: 25px;
+  height: 25px;
+  margin-right: 30px;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icon li {
+  margin: 10px;
+  padding: 0;
+}
+
+.social-icon li a {
+  height: 35px;
+  width: 35px;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon li a img {
+  margin: 0;
+}
+
+@media (max-width:768px) {
+  footer ul li a {
+    font-size: 18px;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@media (max-width:1100px) {
+  .contact {
+    display: none;
+  }
+
+  .bar {
+    padding: 10px;
+  }
+
+  .navbar .logo {
+    height: 100px;
+  }
+
+  .bar nav {
+    display: none;
+  }
+
+  .toggle-switch {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .navbar .mobile {
+    display: block !important;
+    position: absolute;
+    top: 0%;
+    transform: translateY(-100%);
+    background-color: #292727f5;
+    width: 100%;
+    backdrop-filter: blur(20px);
+    transition: 0.2s;
+  }
+
+  .navbar.active .mobile {
+    display: block !important;
+    top: 100%;
+    transform: translateY(0);
+  }
+
+  .navbar ul {
+    display: block;
+  }
+
+  .navbar ul li {
+    padding: 20px 30px;
+    text-align: center;
   }
 }
